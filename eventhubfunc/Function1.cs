@@ -12,7 +12,7 @@ namespace eventhubfunc
     public static class Function1
     {
         [FunctionName("Function1")]
-        public static async Task Run([EventHubTrigger("eh1", Connection = "ehconn", ConsumerGroup = "%consumerGroup%")] EventData[] events, ILogger log)
+        public static async Task Run([EventHubTrigger("%eh%", Connection = "ehconn", ConsumerGroup = "%consumerGroup%")] EventData[] events, ILogger log)
         {
             var exceptions = new List<Exception>();
 
